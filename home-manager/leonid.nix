@@ -1,0 +1,37 @@
+{ config, pkgs, ... }:
+
+{
+  home.username = "leonid";
+  home.homeDirectory = "/home/leonid";
+  home.stateVersion = "25.11";
+
+  home.packages = with pkgs; [
+    # Must Have
+    obsidian
+
+    # Programming
+    go
+
+    # Terminal Apps
+    fastfetch
+    btop
+  ];
+
+  programs = {
+    git = {
+      enable = true;
+      userName = "Leonid-Yakovlev63";
+      userEmail = "j772115@gmail.com";
+      extraConfig = {
+        init.defaultBranch = "master";
+        safe.directory = "/etc/nixos";
+      };
+      aliases = {
+        s = "status";
+        # https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
+        lg = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all";
+        lg1 = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''%C(white)%s%C(reset) %C(dim white)- %an%C(reset)'";
+      };
+    };
+  };
+}
