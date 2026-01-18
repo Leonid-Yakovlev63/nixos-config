@@ -12,6 +12,7 @@
     # Programming
     go
     gcc
+    gnumake
 
     # Go tools
     gopls
