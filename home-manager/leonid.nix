@@ -11,6 +11,15 @@
 
     # Programming
     go
+    gcc
+    gnumake
+
+    # Go tools
+    gopls
+    gotests
+    impl
+    delve
+    go-tools
 
     # Terminal Apps
     fastfetch
@@ -38,6 +47,11 @@
       enable = true;
       userSettings = {
         "terminal.integrated.stickyScroll.enabled" = false;
+
+        # Go settings
+        "go.toolsManagement.autoUpdate" = false;
+        "go.useLanguageServer" = true;
+        "go.languageServer" = "gopls";
       };
       extensions = with pkgs.vscode-extensions; [
         # Nix
