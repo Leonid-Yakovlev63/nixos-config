@@ -24,7 +24,22 @@
     # Terminal Apps
     fastfetch
     btop
+    # GNOME
+    gnomeExtensions.blur-my-shell
   ];
+
+  # https://discourse.nixos.org/t/enabling-gnome-extensions-with-home-manager/59701
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/shell" = {
+        enabled-extensions = [
+          "blur-my-shell@aunetx"
+        ];
+      };
+      "org/gnome/desktop/interface".show-battery-percentage = true;
+    };
+  };
 
   programs = {
     git = {
