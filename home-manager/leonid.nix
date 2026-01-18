@@ -33,5 +33,20 @@
         lg1 = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''%C(white)%s%C(reset) %C(dim white)- %an%C(reset)'";
       };
     };
+    vscode = {
+      enable = true;
+      userSettings = {
+        "terminal.integrated.stickyScroll.enabled" = false;
+      };
+      extensions = with pkgs.vscode-extensions; [
+        # Nix
+        bbenoist.nix
+        # Go
+        golang.go
+        # Web
+        ritwickdey.liveserver
+        formulahendry.auto-close-tag
+      ];
+    };
   };
 }
