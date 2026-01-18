@@ -9,9 +9,6 @@
     <home-manager/nixos>
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-
-    # Programming
-    ./packages/vscode.nix
   ];
 
   # Bootloader.
