@@ -15,3 +15,15 @@ sudo nix-channel --update
 ```bash
 sudo nixfmt **/*.nix
 ```
+
+## Как не вводить постоянно sudo при изменении файлов
+```bash
+# Переместить конфиги в домашнюю директорию
+sudo mv /etc/nixos ~/nixos-config
+
+# Создать симлинк
+sudo ln -s ~/nixos-config /etc/nixos
+
+# Изменить владельца
+sudo chown -R leonid:users ~/nixos-config
+```
