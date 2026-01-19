@@ -24,7 +24,22 @@
     # Terminal Apps
     fastfetch
     btop
+    # GNOME
+    gnomeExtensions.blur-my-shell
   ];
+
+  # https://discourse.nixos.org/t/enabling-gnome-extensions-with-home-manager/59701
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/shell" = {
+        enabled-extensions = [
+          "blur-my-shell@aunetx"
+        ];
+      };
+      "org/gnome/desktop/interface".show-battery-percentage = true;
+    };
+  };
 
   programs = {
     git = {
@@ -36,8 +51,11 @@
         safe.directory = "/etc/nixos";
       };
       aliases = {
+        a = "add .";
         s = "status";
         m = "merge --no-ff";
+        unfuck = "!git add . && git commit --amend && git push --force";
+        l = "log";
         # https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
         lg = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all";
         lg1 = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''%C(white)%s%C(reset) %C(dim white)- %an%C(reset)'";
