@@ -12,6 +12,7 @@
   ];
 
   # Bootloader.
+  # https://youtu.be/EP7bIiTULts?si=SsLOuN7R1zW4Z2OS
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
