@@ -5,6 +5,7 @@
 { config, pkgs, ... }:
 
 {
+  system.nixos.label = "v1.3.1";
   imports = [
     <home-manager/nixos>
     # Include the results of the hardware scan.
