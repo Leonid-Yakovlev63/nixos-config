@@ -96,8 +96,13 @@
   home-manager.users.leonid = import ./home-manager/leonid.nix;
 
   # Install firefox.
-  programs.firefox.enable = true;
-
+  programs.firefox = {
+    enable = true;
+    policies = {
+      DisplayMenuBar = "never";
+    };
+  };
+  
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
