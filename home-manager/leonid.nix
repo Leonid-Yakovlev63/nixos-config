@@ -26,6 +26,7 @@
     btop
     # GNOME
     gnomeExtensions.blur-my-shell
+    gnomeExtensions.dash-to-dock
   ];
 
   # https://discourse.nixos.org/t/enabling-gnome-extensions-with-home-manager/59701
@@ -35,6 +36,7 @@
       "org/gnome/shell" = {
         enabled-extensions = [
           "blur-my-shell@aunetx"
+          "dash-to-dock@charlesg99"
         ];
       };
       "org/gnome/desktop/interface".show-battery-percentage = true;
