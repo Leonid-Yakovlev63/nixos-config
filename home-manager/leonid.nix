@@ -27,6 +27,7 @@
     # GNOME
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock
+    gnomeExtensions.compiz-windows-effect
   ];
 
   # https://discourse.nixos.org/t/enabling-gnome-extensions-with-home-manager/59701
@@ -37,6 +38,7 @@
         enabled-extensions = [
           "blur-my-shell@aunetx"
           "dash-to-dock@charlesg99"
+          "compiz-windows-effect@hermes83"
         ];
       };
       "org/gnome/desktop/interface".show-battery-percentage = true;
