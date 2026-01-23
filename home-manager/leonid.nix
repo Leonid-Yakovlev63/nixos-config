@@ -26,6 +26,7 @@
     btop
     # GNOME
     gnomeExtensions.blur-my-shell
+    gnomeExtensions.compiz-windows-effect
   ];
 
   # https://discourse.nixos.org/t/enabling-gnome-extensions-with-home-manager/59701
@@ -35,6 +36,7 @@
       "org/gnome/shell" = {
         enabled-extensions = [
           "blur-my-shell@aunetx"
+          "compiz-windows-effect@hermes83"
         ];
       };
       "org/gnome/desktop/interface".show-battery-percentage = true;
