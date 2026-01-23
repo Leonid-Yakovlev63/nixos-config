@@ -61,6 +61,7 @@
         background-opacity = 1.0;
         transparency-mode = "FIXED";
         autohide = false;
+        show-trash = false;
       };
     };
   };
