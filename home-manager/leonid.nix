@@ -46,6 +46,18 @@
         xkb-options = ["grp:alt_shift_toggle"];
       };
       "org/gnome/desktop/interface".show-battery-percentage = true;
+       # Настройки Dash to Dock в стиле Ubuntu
+      "org/gnome/shell/extensions/dash-to-dock" = {
+        dock-position = "LEFT";
+        dash-max-icon-size = 48;
+        icon-size-fixed = true;
+        apply-custom-theme = false;
+        custom-background-color = true;
+        background-color = "rgb(0,0,0)";
+        background-opacity = 1.0;
+        transparency-mode = "FIXED";
+        autohide = false;
+      };
     };
   };
 
