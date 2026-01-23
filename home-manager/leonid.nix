@@ -44,8 +44,12 @@
       "org/gnome/desktop/input-sources" = {
         sources = [ ["xkb" "us"] ["xkb" "ru"] ];
         xkb-options = ["grp:alt_shift_toggle"];
+        show-all-sources = true;
       };
-      "org/gnome/desktop/interface".show-battery-percentage = true;
+      "org/gnome/desktop/interface" = {
+        show-battery-percentage = true;
+        show-input-method-menu = true;
+      };
        # Настройки Dash to Dock в стиле Ubuntu
       "org/gnome/shell/extensions/dash-to-dock" = {
         dock-position = "LEFT";
