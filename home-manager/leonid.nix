@@ -30,10 +30,10 @@
     gnomeExtensions.compiz-windows-effect
   ];
 
-  # https://discourse.nixos.org/t/enabling-gnome-extensions-with-home-manager/59701
   dconf = {
     enable = true;
     settings = {
+      # https://discourse.nixos.org/t/enabling-gnome-extensions-with-home-manager/59701
       "org/gnome/shell" = {
         enabled-extensions = [
           "blur-my-shell@aunetx"
@@ -45,6 +45,7 @@
         sources = [ ["xkb" "us"] ["xkb" "ru"] ];
         xkb-options = ["grp:alt_shift_toggle"];
       };
+      "org/gnome/desktop/interface".show-battery-percentage = true;
     };
   };
 
