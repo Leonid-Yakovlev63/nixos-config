@@ -29,7 +29,7 @@
     gnomeExtensions.dash-to-dock
     gnomeExtensions.compiz-windows-effect
   ];
-  
+
   home.file.".background-image".source = /home/leonid/nixos-config/walpappers/nix-os-girl.png;
   dconf = {
     enable = true;
@@ -59,6 +59,14 @@
       "org/gnome/desktop/interface" = {
         show-battery-percentage = true;
         show-input-method-menu = true;
+      };
+      # Ночной режим
+      "org/gnome/settings-daemon/plugins/color" = {
+        night-light-enabled = true;
+        night-light-temperature = 3700;
+        night-light-schedule-automatic = false;
+        night-light-schedule-from = 0.0;
+        night-light-schedule-to = 0.0; 
       };
        # Настройки Dash to Dock в стиле Ubuntu
       "org/gnome/shell/extensions/dash-to-dock" = {
