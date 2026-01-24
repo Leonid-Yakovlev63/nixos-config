@@ -52,8 +52,17 @@
         ];
       };
       "org/gnome/desktop/input-sources" = {
-        sources = [ ["xkb" "us"] ["xkb" "ru"] ];
-        xkb-options = ["grp:alt_shift_toggle"];
+        sources = [
+          [
+            "xkb"
+            "us"
+          ]
+          [
+            "xkb"
+            "ru"
+          ]
+        ];
+        xkb-options = [ "grp:alt_shift_toggle" ];
         show-all-sources = true;
       };
       "org/gnome/desktop/interface" = {
@@ -66,9 +75,9 @@
         night-light-temperature = 3700;
         night-light-schedule-automatic = false;
         night-light-schedule-from = 0.0;
-        night-light-schedule-to = 0.0; 
+        night-light-schedule-to = 0.0;
       };
-       # Настройки Dash to Dock в стиле Ubuntu
+      # Настройки Dash to Dock в стиле Ubuntu
       "org/gnome/shell/extensions/dash-to-dock" = {
         dock-position = "LEFT";
         dash-max-icon-size = 48;
