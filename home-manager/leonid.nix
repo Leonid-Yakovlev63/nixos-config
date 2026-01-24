@@ -29,10 +29,20 @@
     gnomeExtensions.dash-to-dock
     gnomeExtensions.compiz-windows-effect
   ];
-
+  
+  home.file.".background-image".source = /home/leonid/nixos-config/walpappers/nix-os-girl.png;
   dconf = {
     enable = true;
     settings = {
+      # Обои
+      "org/gnome/desktop/background" = {
+        "picture-uri" = ".background-image";
+        "picture-uri-dark" = ".background-image";
+      };
+      "org/gnome/desktop/screensaver" = {
+        "picture-uri" = ".background-image";
+        "picture-uri-dark" = ".background-image";
+      };
       # https://discourse.nixos.org/t/enabling-gnome-extensions-with-home-manager/59701
       "org/gnome/shell" = {
         enabled-extensions = [
