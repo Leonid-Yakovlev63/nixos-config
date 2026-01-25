@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./tools
+  ];
+
   home.username = "leonid";
   home.homeDirectory = "/home/leonid";
   home.stateVersion = "25.11";
@@ -8,22 +12,6 @@
   home.packages = with pkgs; [
     # Must Have
     obsidian
-
-    # Programming
-    go
-    gcc
-    gnumake
-
-    # Go tools
-    gopls
-    gotests
-    impl
-    delve
-    go-tools
-
-    # Terminal Apps
-    fastfetch
-    btop
     # GNOME
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock
