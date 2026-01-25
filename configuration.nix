@@ -55,8 +55,7 @@
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us,ru";
-    variant = "";
-    options = "grp:win_space_toggle";
+    options = "grp:alt_shift_toggle";
   };
 
   # Enable CUPS to print documents.
@@ -97,8 +96,13 @@
   home-manager.users.leonid = import ./home-manager/leonid.nix;
 
   # Install firefox.
-  programs.firefox.enable = true;
-
+  programs.firefox = {
+    enable = true;
+    policies = {
+      DisplayMenuBar = "never";
+    };
+  };
+  
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -110,6 +114,7 @@
     wget
     tree
     nixfmt-rfc-style
+    wireguard-tools
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

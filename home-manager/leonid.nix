@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./tools
+    ./desktops
+  ];
+
   home.username = "leonid";
   home.homeDirectory = "/home/leonid";
   home.stateVersion = "25.11";
@@ -8,38 +13,7 @@
   home.packages = with pkgs; [
     # Must Have
     obsidian
-
-    # Programming
-    go
-    gcc
-    gnumake
-
-    # Go tools
-    gopls
-    gotests
-    impl
-    delve
-    go-tools
-
-    # Terminal Apps
-    fastfetch
-    btop
-    # GNOME
-    gnomeExtensions.blur-my-shell
   ];
-
-  # https://discourse.nixos.org/t/enabling-gnome-extensions-with-home-manager/59701
-  dconf = {
-    enable = true;
-    settings = {
-      "org/gnome/shell" = {
-        enabled-extensions = [
-          "blur-my-shell@aunetx"
-        ];
-      };
-      "org/gnome/desktop/interface".show-battery-percentage = true;
-    };
-  };
 
   programs = {
     git = {
