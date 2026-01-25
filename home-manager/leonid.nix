@@ -13,6 +13,9 @@
   home.packages = with pkgs; [
     # Must Have
     obsidian
+
+    # Читалка
+    foliate
   ];
 
   programs = {
